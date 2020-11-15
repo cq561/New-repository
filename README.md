@@ -16,7 +16,7 @@
 根据输入情况，要在程序中做异常处理。  
 ## 实验过程
 先设计个接口
-
+![image](https://github.com/cq561/New-repository/blob/main/1.png）
 在做处理
 ## 核心代码
 public static void main(String[] args) {  
@@ -50,6 +50,6 @@ public static void main(String[] args) {
 				
 			}  
 ## 实验结果
-
+![image](https://github.com/cq561/New-repository/blob/main/1.png）
 ## 实验感想
 知识不足 参考了其他同学和网上的知识 才完成了此次的实验 
