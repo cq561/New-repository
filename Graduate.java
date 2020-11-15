@@ -68,27 +68,29 @@ public class Graduate {
 	
 		public static void main(String[] args) {
 			try {
-			// 创建一个研究生对象
-			Graduate graduate = new Graduate();
-			// 研究生对象的初始化
-			graduate.name = "张三";
-			System.out.println("你好:" + graduate.name);
-			
-			// 设置月工资
-			Scanner scanner = new Scanner(System.in);
-			System.out.println("请输入你的月工资：");
-			double pay = scanner.nextDouble();
-			graduate.setPay(pay);
-			
-			
-			
-			
-			// 设置学费t
-			System.out.println("请输入你的学费：");
-			
-			double fee = scanner.nextDouble();
-			graduate.setFee(fee);
-			ratepaying();
+				//创建研究生对象
+				Graduate graduate = new Graduate();
+				Scanner scanner = new Scanner(System.in);	
+				System.out.println("请输入要查询人的个数");
+				
+				int j = scanner.nextInt();
+				for(int i=1;i<=j;i++){
+				//初始化研究生对象
+				System.out.println("请输入姓名");
+				graduate.name = scanner.next();		//姓名
+				System.out.println("请输入年龄");
+				graduate.age = scanner.nextInt();	//年龄
+				System.out.println("请输入性别");
+				graduate.sex = scanner.next();		//性别
+				//设置工资
+				System.out.println("请输入月工资");
+				double pay = scanner.nextDouble();	//月工资
+				graduate.setPay(pay);
+				System.out.println("请输入学费");
+				double fee = scanner.nextDouble();	//学费
+				graduate.setFee(fee);
+				ratepaying();
+				}
 			}
 			catch(Exception e) {
 				System.out.println("错误");
@@ -97,4 +99,5 @@ public class Graduate {
 		}}
 		
 				
+
 
