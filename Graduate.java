@@ -12,40 +12,71 @@ public class Graduate {
 		}
     String name,sex;
     int age;
-    double fee,pay;
+   static double fee,pay;
     public void setPay(double pay) {
 		this.pay = pay * 12;
-		System.out.println("ÄãµÄÄêÊÕÈëÎª£º" + this.pay);
+		System.out.println("ä½ çš„å¹´æ”¶å…¥ä¸ºï¼š" + this.pay);
 	}
     public void getPay(double pay) {
 		this.pay = pay * 12;
-		System.out.println("ÄãµÄÄêÊÕÈëÎª£º" + this.pay);
+		System.out.println("ä½ çš„å¹´æ”¶å…¥ä¸ºï¼š" + this.pay);
 	}
     public void setFee(double fee) {
 		this.fee = fee;
-		System.out.println("ÄãµÄÑ§·ÑÉèÖÃÎª£º" + this.fee);}
+		System.out.println("ä½ çš„å­¦è´¹è®¾ç½®ä¸ºï¼š" + this.fee);}
     
 		public void getFee(double fee) {
 			this.fee = fee;
-			System.out.println("ÄãµÄÑ§·ÑÎª£º" + this.fee);}
-		public boolean Loan1(){
-			if ((this.pay - this.fee) < 2000) {
-				System.out.println("ÄãµÄÄêÊÕÈë" + this.pay + ",¼õÈ¥Ñ§·Ñ" + this.fee + "µÈÓÚ" + (this.pay - this.fee));
-				return true;
+			System.out.println("ä½ çš„å­¦è´¹ä¸ºï¼š" + this.fee);}
+		public static void ratepaying() {
+			try{
+			if((pay-fee)<3000) {
+				System.out.println("åº”çº³ç¨æ¬¾"+(pay-fee)*0.03);
+				System.out.println("å®å‘å·¥èµ„"+((pay-fee)-((pay-fee)*0.03)));
+			}else if((pay-fee)>3000 && (pay-fee)<=12000){
+				System.out.println("åº”çº³ç¨æ¬¾"+(pay-fee)*0.1);
+				System.out.println("å®å‘å·¥èµ„"+((pay-fee)-((pay-fee)*0.1)));
+			}else if((pay-fee)>12000 && (pay-fee)<=25000) {
+				System.out.println("åº”çº³ç¨æ¬¾"+(pay-fee)*0.2);
+				System.out.println("å®å‘å·¥èµ„"+((pay-fee)-((pay-fee)*0.2)));
+			}else if((pay-fee)>25000 && (pay-fee)<=35000) {
+				System.out.println("åº”çº³ç¨æ¬¾"+(pay-fee)*0.25);
+				System.out.println("å®å‘å·¥èµ„"+((pay-fee)-((pay-fee)*0.25)));
+			}else if((pay-fee)>35000 && (pay-fee)<=55000) {
+				System.out.println("åº”çº³ç¨æ¬¾"+(pay-fee)*0.3);
+				System.out.println("å®å‘å·¥èµ„"+((pay-fee)-((pay-fee)*0.3)));
+			}else if((pay-fee)>55000 && (pay-fee)<=80000) {
+				System.out.println("åº”çº³ç¨æ¬¾"+(pay-fee)*0.35);
+				System.out.println("å®å‘å·¥èµ„"+((pay-fee)-((pay-fee)*0.35)));
+			}else if((pay-fee)>80000) {
+				System.out.println("åº”çº³ç¨æ¬¾"+(pay-fee)*0.45);
+				System.out.println("å®å‘å·¥èµ„"+((pay-fee)-((pay-fee)*0.45)));
+			}	
+			}catch(Exception e){
+				System.out.println(e.toString());
 			}
-			System.out.println("ÄãµÄÄêÊÕÈë" + this.pay + ",¼õÈ¥Ñ§·Ñ" + this.fee + "µÈÓÚ" + (this.pay - this.fee));
-			return false;
-
-		}
-		public boolean Loan(){
-			if ((this.pay - this.fee) < 2000) {
-				System.out.println("ÄãµÄÄêÊÕÈë" + this.pay + ",¼õÈ¥Ñ§·Ñ" + this.fee + "µÈÓÚ" + (this.pay - this.fee));
-				return true;
-			}
-			System.out.println("ÄãµÄÄêÊÕÈë" + this.pay + ",¼õÈ¥Ñ§·Ñ" + this.fee + "µÈÓÚ" + (this.pay - this.fee));
-			return false;
-		}
-		
+		}			
 	
+		public static void main(String[] args) {
+			// åˆ›å»ºä¸€ä¸ªç ”ç©¶ç”Ÿå¯¹è±¡
+			Graduate graduate = new Graduate();
+			// ç ”ç©¶ç”Ÿå¯¹è±¡çš„åˆå§‹åŒ–
+			graduate.name = "å¼ ä¸‰";
+			System.out.println("ä½ å¥½:" + graduate.name);
+			
+			// è®¾ç½®æœˆå·¥èµ„
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("è¯·è¾“å…¥ä½ çš„æœˆå·¥èµ„ï¼š");
+			double pay = scanner.nextDouble();
+			graduate.setPay(pay);
+			
+			// è®¾ç½®å­¦è´¹
+			System.out.println("è¯·è¾“å…¥ä½ çš„å­¦è´¹ï¼š");
+			double fee = scanner.nextDouble();
+			graduate.setFee(fee);
+			ratepaying();
+			
+			
+				}
 
 }
