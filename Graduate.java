@@ -8,12 +8,19 @@ import shiyan4.Teacher.teainterface;
 public class Graduate {
 	public abstract class graduate implements stuinterface,teainterface {
 
+		public static void setFee(double fee) {
+			// TODO Auto-generated method stub
+			
+		}
+
 		
 		}
+	
     String name,sex;
     int age;
    static double fee,pay;
     public void setPay(double pay) {
+    	
 		this.pay = pay * 12;
 		System.out.println("你的年收入为：" + this.pay);
 	}
@@ -28,6 +35,8 @@ public class Graduate {
 		public void getFee(double fee) {
 			this.fee = fee;
 			System.out.println("你的学费为：" + this.fee);}
+    
+   
 		public static void ratepaying() {
 			try{
 			if((pay-fee)<3000) {
@@ -53,11 +62,12 @@ public class Graduate {
 				System.out.println("实发工资"+((pay-fee)-((pay-fee)*0.45)));
 			}	
 			}catch(Exception e){
-				System.out.println(e.toString());
+				System.out.println("错误");
 			}
 		}			
 	
 		public static void main(String[] args) {
+			try {
 			// 创建一个研究生对象
 			Graduate graduate = new Graduate();
 			// 研究生对象的初始化
@@ -70,13 +80,21 @@ public class Graduate {
 			double pay = scanner.nextDouble();
 			graduate.setPay(pay);
 			
-			// 设置学费
+			
+			
+			
+			// 设置学费t
 			System.out.println("请输入你的学费：");
+			
 			double fee = scanner.nextDouble();
 			graduate.setFee(fee);
 			ratepaying();
-			
-			
-				}
+			}
+			catch(Exception e) {
+				System.out.println("错误");
+				
+			}
+		}}
+		
+				
 
-}
